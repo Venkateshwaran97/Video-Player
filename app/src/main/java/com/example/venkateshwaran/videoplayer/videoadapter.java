@@ -19,8 +19,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-
 import java.util.ArrayList;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,12 +28,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 public class videoadapter extends BaseAdapter {
     private ArrayList<video> songs;
     private LayoutInflater songInf;
-    public videoadapter(Context c, ArrayList<video> theSongs){
-        songs=theSongs;
-        songInf=LayoutInflater.from(c);
+
+    public videoadapter(Context c, ArrayList<video> theSongs) {
+        songs = theSongs;
+        songInf = LayoutInflater.from(c);
     }
 
     @Override
@@ -56,10 +58,10 @@ public class videoadapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //map to song layout
-        LinearLayout songLay = (LinearLayout)songInf.inflate
+        LinearLayout songLay = (LinearLayout) songInf.inflate
                 (R.layout.videolist, parent, false);
         //get title and artist views
-        TextView songView = (TextView)songLay.findViewById(R.id.textView);
+        TextView songView = (TextView) songLay.findViewById(R.id.textView);
         //TextView artistView = (TextView)songLay.findViewById(R.id.song_artist);
         //get song using position
         video currSong = songs.get(position);
